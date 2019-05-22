@@ -1,37 +1,46 @@
-import React, { Component } from 'react';
-import { Header, Grid, Image, Card } from 'semantic-ui-react';
-import './style/home.css';
-import Mewtwo from './img/Mewtwo.jpg';
-import venasuar from './img/venasuar.jpg';
-import Omanyte from './img/Omanyte.jpg';
-import ninetails from './img/ninetails.jpg';
-import aerodactyl from './img/aerodactyl.jpg';
+import React, { useState, useEffect } from 'react';
+import Board from './Board';
 
+import initializeDeck from './Deck';
 
+export default function Home() {
+  const [cards, setCards] = useState([])
+  const [flipped, setFlipped] = useState([])
+  const [dimension, setDimension] = useState(400)
+  const [solved, setSolved] = useState([])
+  const [disabled, setDisabled] = useState()
 
-class Home extends Component {
- state = { flipped: false, matched: false }
+  useEffect(() => {
+    resizeBoard()
+    setCards(initializeDeck())
+  }, [])
 
-  flip = () => {
-    this.setState({ flipped: !this.state.flipped })
-  };
+  useEffect(() => {
+    const resizeListener = window.addEventListener('resize', resizeBoard)
 
-  render() {
-    let array = ["Mewtwo", "Mewtwo", "venasuar", "venasuar", "Omanyte", "Omanyte", "ninetails", "ninetails", "aerodactyl", "aerodactyl"];
+    return () => window.removeEventListener('resize', resizeListener)
+  })
 
-    let pokes = array.map(poke => {
-      return <img className='img' key={poke.id} src={require(`./img/${poke}.jpg`)} />
-    });
-    return (
-      <div>
-        <Header as='h1' textAlign='center'>Memory Match!</Header>
-        <br />
-        <Grid centered columns='equal'>
-          <div>{pokes.sort(() => 0.5 - Math.random())}</div>
-        </Grid>
-      </div>
-    );
+  const handleClick = (id) => setFlipped([... flipped, id])
+
+  const resizeBoard = () => {
+    setDimension(Math.min(
+      document.documentElement.clientWidth,
+      document.documentElement.clientHeight,
+    ),
+   )
   }
-}
 
-export default Home;
+    return (
+      <div style={{'padding' : '20px'}}>
+        <h1>Memory</h1>
+        <h2>Can you remember where the cards are?</h2>
+        <Board
+          dimension={dimension}
+          cards={cards}
+          flipped={flipped}
+          handleClick={handleClick}
+          />
+      </div>
+    )
+}
