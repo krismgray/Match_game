@@ -7,14 +7,14 @@ import './style/board.css';
 
 export default function Board({ cards, flipped, handleClick, dimension, disabled, solved }) {
   return (
-    <div className="board" style={{ width: '100%', height: dimension, "margin-left": "5%",}}>
+    <div className="board" style={{ width: '100%', height: dimension, "margin-left": "2%",}}>
       {cards.map((card) => (
           <Card
             key={card.id}
             id={card.id}
             type={card.type}
-            width={dimension / 3}
-            height={dimension / 2.6}
+            width={dimension / 4.6}
+            height={dimension / 3.8}
             flipped={flipped.includes(card.id)}
             handleClick={handleClick}
             disabled={disabled || solved.includes(card.id)}

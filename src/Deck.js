@@ -12,7 +12,8 @@ function shuffle(array) {
 
 export default function initializeDeck() {
   let id = 0
-  const cards = ['aerodactyl', 'Mewtwo', 'ninetails', 'Omanyte', 'venasuar', 'vaporeon', 'alakazam', 'eevee'
+  const cards = ['aerodactyl', 'Mewtwo', 'ninetails', 'Omanyte', 'venasuar', 'vaporeon', 'alakazam', 'eevee',
+  'Blastoise', 'Arcanine', 'Garydos', 'machop',
   ].reduce((acc, type) => {
     acc.push({
       id: id++,
