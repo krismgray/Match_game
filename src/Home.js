@@ -38,7 +38,7 @@ export default function Home() {
         setSolved([...solved, flipped[0], id])
         resetCards()
       } else {
-        setTimeout(resetCards, 2000)
+        setTimeout(resetCards, 1500)
       }
     }
   }
@@ -71,10 +71,18 @@ export default function Home() {
    )
   }
 
+  const restartGame = (props) => {
+    setSolved([])
+  }
+
     return (
       <div style={{'padding' : '20px'}}>
-        <h1>Memory</h1>
+        <h1>Memory Match</h1>
         <h2>Can you remember where the cards are?</h2>
+        <button type="button" onClick={restartGame}
+          style={{'background-color' : 'red', 'color' : 'white', "font-size" : "25px", "padding" : "10px",}}
+          >Restart?</button>
+        <p></p>
         <Board
           dimension={dimension}
           cards={cards}
