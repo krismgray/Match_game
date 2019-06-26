@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import Board from './Board';
+import Board from './Board2';
 import NavMenu from './NavMenu';
-import './style/home.css';
+import './style/unicorn.css';
 
-import initializeDeck from './Deck';
+import initializeDeck from './Deck2';
 
-export default function Home() {
+export default function Unicorns() {
   const [cards, setCards] = useState([])
   const [flipped, setFlipped] = useState([])
   const [dimension, setDimension] = useState(800)
@@ -78,10 +78,10 @@ export default function Home() {
   }
 
     return (
-      <div className='homebody'>
+      <div className='unicornbody'>
         <NavMenu />
         <div style={{'padding' : '20px'}}>
-          <h1>Gotta Catch them all!</h1>
+          <h1>Make the magic happen!</h1>
           <h2>Can you remember where the cards are?</h2>
           <button type="button" onClick={restartGame}
             style={{'background-color' : 'red', 'color' : 'white', "font-size" : "35px", "padding" : "10px",}}
