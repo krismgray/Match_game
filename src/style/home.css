@@ -1,7 +1,17 @@
 .homebody {
   background-image: url('./images/pokemon_water.jpg');
-  background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  height: 230vh;
+}
+
+@media (max-width: 800px) {
+  .homebody {
+    background-image: url('./images/pokemon_water.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 260vh;
+  }
 }
 
 h1 {

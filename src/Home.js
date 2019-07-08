@@ -75,6 +75,7 @@ export default function Home() {
 
   const restartGame = (props) => {
     setSolved([])
+    setCards(initializeDeck())
   }
 
     return (

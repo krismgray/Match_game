@@ -1,7 +1,18 @@
 .unicornbody {
   background-image: url('./images/unicornback.jpg');
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
+  background-position: center;
   background-size: cover;
+  height: 180vh;
+}
+
+@media (max-width: 800px) {
+  .unicornbody {
+    background-image: url('./images/unicornback.jpg');
+    background-position: center;
+    background-repeat: repeat-y;
+    height: 160vh;
+  }
 }
 
 h1 {
