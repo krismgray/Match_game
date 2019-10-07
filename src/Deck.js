@@ -14,7 +14,8 @@ export default function initializeDeck() {
   let id = 0
   const cards = ['aerodactyl', 'Mewtwo', 'ninetails', 'Omanyte', 'venasuar', 'vaporeon', 'alakazam', 'eevee',
   'Blastoise', 'Arcanine', 'Garydos', 'machop', 'Exeggutor', 'Flareon', 'Dragonite', 'Jolteon', 'Charizard',
-  'Snorlax', 'Raichu', 'Articuno', 'Beedrill', 'Zapados', 'Moltres', 'Electrode',
+  'Snorlax', 'Raichu', 'Articuno', 'Beedrill', 'Zapados', 'Moltres', 'Electrode', 'pikachu', 'Gengar',
+  'Pideotto', 'scyther', 'diglett', 'zubat', 'nidoking', 'ponyta', 'chansey', 'horsea', 'sandslash', 'farfetch'
   ].reduce((acc, type) => {
     acc.push({
       id: id++,

@@ -1,16 +1,31 @@
 .homebody {
+  background-image: url('./images/pokeball_back.png');
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  color: white
+}
+
+.homebody2 {
   background-image: url('./images/pokemon_water.jpg');
   background-size: cover;
   background-position: center;
-  height: 230vh;
+  height: 150vh;
 }
 
 @media (max-width: 800px) {
   .homebody {
+    background-image: url('./images/pokeball_back.png');
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+  }
+
+  .homebody2 {
     background-image: url('./images/pokemon_water.jpg');
     background-size: cover;
     background-position: center;
-    height: 260vh;
+    height: 150vh;
   }
 }
 

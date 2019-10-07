@@ -85,17 +85,19 @@ export default function Home() {
           <h1>Gotta Catch them all!</h1>
           <h2>Can you remember where the cards are?</h2>
           <button type="button" onClick={restartGame}
-            style={{'background-color' : 'red', 'color' : 'white', "font-size" : "35px", "padding" : "10px",}}
+            style={{'background-color' : 'white', 'color' : 'black', "font-size" : "35px", "padding" : "10px",}}
             >Restart?</button>
           <p></p>
-          <Board
-            dimension={dimension}
-            cards={cards}
-            flipped={flipped}
-            handleClick={handleClick}
-            disabled={disabled}
-            solved={solved}
-            />
+          <div className='homebody2'>
+            <Board
+              dimension={dimension}
+              cards={cards}
+              flipped={flipped}
+              handleClick={handleClick}
+              disabled={disabled}
+              solved={solved}
+              />
+          </div>
         </div>
       </div>
     )
